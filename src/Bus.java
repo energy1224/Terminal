@@ -5,6 +5,10 @@ public class Bus extends Vehicle {
   private   int passengerСapacity;
   private   int vacantSeats;
 
+    ArrayList<Passenger> onBoard = new ArrayList<>();
+
+
+
 
 
 
@@ -28,6 +32,14 @@ public class Bus extends Vehicle {
                 '}';
     }
 
+    public void getOnBoard (Passenger passenger) {
+        if (passenger.getTicket().equals("оплачен")) {
+            onBoard.add(passenger);
+            vacantSeats--;
+        }
+
+    }
+
     public int getPassengerСapacity() {
         return passengerСapacity;
     }
@@ -43,6 +55,7 @@ public class Bus extends Vehicle {
     public void setVacantSeats(int vacantSeats) {
         this.vacantSeats = vacantSeats;
     }
+
 
 
 
